@@ -68,10 +68,13 @@ fs.readdirSync("./router/").reverse().forEach(file => {
   app.use(route, Wrap(require("./router/" + file)));
 });
 
-var http = require('http');
+const debug = /--debug/.test(process.argv[2])
 
-app.listen(8080, () => {
-  console.log(`Http server listening on port: 8080`);
+var http = require('http');
+let port = debug?8080:80;
+
+app.listen(port, () => {
+  console.log(`Http server listening on port: ${port}`);
 });
 
 var https = require('https');
@@ -80,6 +83,7 @@ var options = {
   key: fs.readFileSync('./ssl/3_ruyiday.com.key')
 };
 
+port = debug?8443:443;
 https.createServer(options, app).listen(8443, function() {
   console.log(`Https server listening on port: 8443`);
 });
