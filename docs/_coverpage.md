@@ -8,7 +8,7 @@
 
 
 [GitHub](https://github.com/viroyalnj/NeteaseCloudMusicApi)
-[接口调试](http://ruyiday.com)
+[接口调试](https://ruyiday.com)
 [文档](#neteasecloudmusicapi)
 
 ![color](#ffffff)
