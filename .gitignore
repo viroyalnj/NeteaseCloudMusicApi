@@ -2,6 +2,7 @@
 node_modules
 *.log
 npm-debug.log.*
+nohup.out
 
 .idea/
 package-lock.json
