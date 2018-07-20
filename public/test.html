@@ -1,41 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>test</title>
-</head>
+  <title>aaa</title>
 
-<body>
-  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='./jquery.magnific-popup.js'></script>
+  <link rel="stylesheet" type="text/css" href="./minimal-mistakes.scss">
   <script>
-    $.ajax({
-      url: "http://localhost:3000/login/cellphone?phone=phone&password=password",
-      xhrFields: {
-        withCredentials: true
-      },
-      success: function (data) {
-        console.log(data)
-        $.ajax({
-          url: "http://localhost:3000/recommend/songs ",
-          xhrFields: {
-            withCredentials: true
-          },
-          success: function (data) {
-            console.log(data)
-          },
-          error: function (err) {
-            console.log(err)
-          }
-        })
-      },
-      error: function (err) {
-        console.log(err)
-      }
-    })
-  </script>
-</body>
+    $(document).ready(function() {
 
+  $('.simple-ajax-popup-align-top').magnificPopup({
+    type: 'ajax',
+    alignTop: true,
+    overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+  });
+
+  $('.simple-ajax-popup').magnificPopup({
+    type: 'ajax'
+  });
+  
+});
+  </script>
+</head>
+<body>
+
+<a class="simple-ajax-popup-align-top" href="test.html">Load content via ajax</a><br>
+<a class="simple-ajax-popup" href="index.html">Load another content via ajax</a>
+
+</body>
 </html>

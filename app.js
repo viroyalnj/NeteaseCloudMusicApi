@@ -79,7 +79,7 @@ app.listen(http_port, () => {
 
 var https = require('https');
 var options = {
-  cert: fs.readFileSync('./ssl/2_ruyiday.com.crt'),
+  cert: fs.readFileSync('./ssl/full.crt'),
   key: fs.readFileSync('./ssl/3_ruyiday.com.key')
 };
 
